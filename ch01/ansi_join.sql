@@ -1,0 +1,32 @@
+--ansi join sql(1999 nyntax)
+
+-- natural join
+
+--natural join 테이블의 컬럼이름이 같은 경우에만...
+
+SELECT COUNT (*)                             --a.FIRST_NAME, b.DEPARTMENT_NAME
+  FROM EMPLOYEES a NATURAL JOIN DEPARTMENTS b;
+
+SELECT COUNT (*)                             --a.FIRST_NAME, b.DEPARTMENT_NAME
+  FROM EMPLOYEES a JOIN DEPARTMENTS b USING (DEPARTMENT_id);
+
+
+--inner join 표준sql문
+
+SELECT COUNT (*)                             --a.FIRST_NAME, b.DEPARTMENT_NAME
+  FROM EMPLOYEES a JOIN DEPARTMENTs b ON a.DEPARTMENT_ID = b.DEPARTMENT_ID;
+
+SELECT COUNT (*)
+  FROM EMPLOYEES a, DEPARTMENTS b
+ WHERE a.DEPARTMENT_ID = b.DEPARTMENT_ID AND a.MANAGER_ID = b.MANAGER_ID;
+
+
+ --outer join 표준sql문
+
+SELECT COUNT (*)
+  FROM EMPLOYEES a
+       RIGHT OUTER JOIN DEPARTMENTS b ON a.DEPARTMENT_ID = b.DEPARTMENT_ID;
+
+SELECT COUNT (*)
+  FROM DEPARTMENTS b
+       LEFT OUTER JOIN EMPLOYEES a ON a.DEPARTMENT_ID = b.DEPARTMENT_ID;
