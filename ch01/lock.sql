@@ -1,0 +1,7 @@
+COMMIT;
+
+SELECT * FROM book;
+
+UPDATE BOOK
+   SET TITLE = '토지3'
+ WHERE NO = 2;
